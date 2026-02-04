@@ -1,59 +1,242 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Livewire TODO アプリケーション
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+モダンなLaravelとLivewireを使用したリアルタイムTODOアプリケーションです。
 
-## About Laravel
+## 特徴
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+✨ **モダンなLaravel実装**
+- Laravel 11の最新構文を使用
+- 属性ベースのバリデーション (`#[Validate]`)
+- Computed properties (`#[Computed]`)
+- Livewire v4による reactive UI
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+🚀 **リアルタイム機能**
+- Livewireによるリアルタイムな UI 更新（ページリロード不要）
+- AJAX ベースの相互作用
+- 自動バリデーション表示
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+💾 **タスク管理機能**
+- タスクの作成・編集・削除
+- タスク完了状態の切り替え
+- タスク説明（詳細）対応
+- 完了日時の自動記録
 
-## Learning Laravel
+🎨 **UI/UX**
+- Tailwind CSS を使用したモダンなデザイン
+- レスポンシブデザイン対応
+- 暗黒モード対応
+- 直感的なインターフェース
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+🔍 **フィルタリング機能**
+- すべてのタスク表示
+- 未完了タスクのみ表示
+- 完了済みタスクのみ表示
+- リアルタイムカウント表示
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+📄 **ページネーション**
+- 1ページあたり 10 件表示
+- Livewire ページネーション統合
 
-## Laravel Sponsors
+## 技術スタック
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+| 技術 | バージョン | 説明 |
+|------|-----------|------|
+| **PHP** | 8.2+ | プログラミング言語 |
+| **Laravel** | 11.x | バックエンドフレームワーク |
+| **Livewire** | 4.x | リアルタイム UI フレームワーク |
+| **Tailwind CSS** | 最新 | CSS フレームワーク |
+| **SQLite** | - | データベース |
 
-### Premium Partners
+## インストール手順
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 1. 依存関係のインストール
 
-## Contributing
+```bash
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 2. データベース初期化
 
-## Code of Conduct
+```bash
+php artisan migrate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 3. 開発サーバー起動
 
-## Security Vulnerabilities
+```bash
+php artisan serve
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+ブラウザで `http://localhost:8000` にアクセスしてください。
 
-## License
+## 使用方法
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### タスク追加
+1. タイトルを入力
+2. （オプション）説明を入力
+3.「タスクを追加」ボタンをクリック
+
+### タスク完了状態の変更
+- チェックボックスをクリックしてタスクの状態を変更
+- 完了時に自動的に完了日時が記録される
+
+### タスク削除
+- 右側の削除アイコン（ゴミ箱）をクリック
+- 確認ダイアログで削除を確定
+
+### フィルタリング
+- 「すべて」「未完了」「完了済み」ボタンでフィルタリング
+- タスク数がリアルタイムで更新される
+
+## プロジェクト構造
+
+```
+app/
+├── Livewire/
+│   └── TodoList.php           # Livewireコンポーネント
+├── Models/
+│   └── Todo.php               # Todoモデル
+│
+database/
+├── migrations/
+│   └── create_todos_table.php  # Todoテーブルマイグレーション
+│
+resources/
+├── views/
+│   ├── home.blade.php         # ホームページ
+│   ├── layouts/
+│   │   └── app.blade.php      # メインレイアウト
+│   └── livewire/
+│       └── todo-list.blade.php # TODOリストコンポーネントビュー
+│
+routes/
+└── web.php                    # ルート定義
+```
+
+## ファイル詳細
+
+### app/Models/Todo.php
+```php
+class Todo extends Model
+{
+    protected $fillable = ['title', 'description', 'completed', 'completed_at'];
+    protected $casts = ['completed' => 'boolean', 'completed_at' => 'datetime'];
+    
+    // スコープ: 未完了のタスク
+    public function scopePending($query) { ... }
+    
+    // スコープ: 完了済みのタスク
+    public function scopeCompleted($query) { ... }
+}
+```
+
+**特徴:**
+- Mass Assignment 対応
+- 型キャスト設定（boolean と datetime）
+- カスタムスコープで簡単にクエリを分岐
+
+### app/Livewire/TodoList.php
+```php
+class TodoList extends Component
+{
+    use WithPagination;
+    
+    #[Validate('required|string|max:255')]
+    public string $title = '';
+    
+    public function addTodo(): void { ... }
+    public function toggleTodo(Todo $todo): void { ... }
+    public function deleteTodo(Todo $todo): void { ... }
+    public function setFilter(string $filter): void { ... }
+    
+    #[\Livewire\Attributes\Computed]
+    public function todos() { ... }
+}
+```
+
+**特徴:**
+- 属性ベースのバリデーション (`#[Validate]`)
+- Computed Properties によるリアクティブなデータ
+- WithPagination トレイトを使用したページネーション
+- Public プロパティで自動的にリアクティブ
+
+### resources/views/livewire/todo-list.blade.php
+
+**特徴:**
+- Tailwind CSS によるモダンなデザイン
+- 動的スタイル適用（@class ディレクティブ）
+- wire:click によるリアルタイムイベントハンドリング
+- wire:model による双方向バインディング
+- wire:confirm による削除確認
+
+## モダンなLaravelの実装ポイント
+
+### 1. 属性ベースのバリデーション
+```php
+#[Validate('required|string|max:255')]
+public string $title = '';
+```
+
+### 2. Computed Properties
+```php
+#[\Livewire\Attributes\Computed]
+public function todos()
+{
+    // キャッシュされるため効率的
+}
+```
+
+### 3. Livewire Wire ディレクティブ
+```blade
+wire:click="toggleTodo({{ $todo->id }})"
+wire:model="title"
+wire:submit="addTodo"
+```
+
+### 4. モダンなBladeディレクティブ
+```blade
+@class(['bg-blue-500' => condition, 'text-white' => true])
+@forelse ($todos as $todo) ... @empty ... @endforelse
+```
+
+### 5. Eloquent スコープ
+```php
+$query->pending()    // 未完了のタスク
+$query->completed()  // 完了済みのタスク
+```
+
+## トラブルシューティング
+
+### Livewireが反応しない場合
+```bash
+# キャッシュをクリア
+php artisan cache:clear
+php artisan config:clear
+
+# 再度ミグレーション実行
+php artisan migrate:fresh
+```
+
+### ページネーションが表示されない場合
+```bash
+# Livewireのパブリッシュ
+php artisan livewire:publish
+```
+
+## 拡張可能な機能案
+
+- 🔐 ユーザー認証対応（タスク所有者ごとの管理）
+- 📌 タスク優先度設定
+- 🏷️ カテゴリー・タグ機能
+- 📅 期限設定と期限超過アラート
+- 🔔 通知機能
+- 👥 タスク共有機能
+- 📊 進捗ダッシュボード
+
+## ライセンス
+
+MIT
+
+## サポート
+
+問題が発生した場合は、GitHub Issues で報告してください。
